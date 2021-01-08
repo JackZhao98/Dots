@@ -8,26 +8,37 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var tapped = false
     var body: some View {
-        
         ZStack {
-            BackCardView()
-                .offset(x: 0, y:-40)
-                .scaleEffect(0.9)
-                .rotationEffect(.degrees(10))
-            BackCardView()
-                .offset(x: 0, y:-20)
-                .scaleEffect(0.95)
-                .rotationEffect(Angle(degrees: 5))
-            ReceiptView()
-        }
+            Color.init(UIColor.systemBackground)
+                
+            ZStack {
+                BackCardView()
+                    .offset(x: 0, y: tapped ? -200 : -40)
+                    .scaleEffect(0.9)
+                    .rotationEffect(.degrees(tapped ? 0 : 10))
+                    .animation(.easeInOut(duration: 0.5))
+                BackCardView()
+                    .offset(x: 0, y:tapped ? -100 : -20)
+                    .scaleEffect(0.95)
+                    .rotationEffect(.degrees(tapped ? 0 : 5))
+                    .animation(.easeInOut(duration: 0.3))
+                SingleReceiptView()
+                    .onTapGesture {
+                        self.tapped.toggle()
+                    }
+            }
+        }.ignoresSafeArea()
+            
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
    static var previews: some View {
       Group {
-         ContentView()
+        ContentView()
+            .preferredColorScheme(.dark)
             .previewDevice(PreviewDevice(rawValue: "iPhone 12 Pro"))
             .previewDisplayName("iPhone 12 Pro")
 
@@ -44,64 +55,37 @@ struct BackCardView: View {
             Spacer()
         }
         .frame(width: 340, height: 220)
-        
-        .background(Color.white)
+        .background(Color.init(UIColor.systemGray5))
         .cornerRadius(20)
         .shadow(radius: 20)
-        
     }
 }
 
-struct ReceiptView: View {
+
+
+struct circlesView: View {
     var body: some View {
-        VStack {
+        HStack {
             Spacer()
-            HStack {
-                VStack(alignment: .leading) {
-                    HStack {
-                        Text("Bill Title")
-                            .font(.system(.largeTitle, design: .rounded))
-                            .fontWeight(.semibold)
-                            .foregroundColor(Color.black)
-                            .foregroundColor(.black)
-                        Image(systemName: "checkmark.circle.fill")
-                            .foregroundColor(.blue)
-                    }
-                    Text("01-06-2021")
-                        .font(.system(.body, design: .rounded))
-                        .foregroundColor(.gray)
-                }
-                Spacer()
-                Text("$149.99")
-                    .font(.system(.largeTitle, design:.rounded))
-                    .bold()
-            }
-            .padding()
+            Image(systemName: "largecircle.fill.circle")
+                .frame(width: 30, height: 30)
+                .foregroundColor(.blue)
+            Image(systemName: "largecircle.fill.circle")
+                .frame(width: 15.0, height: 15.0)
+                .foregroundColor(.green)
+            Image(systemName: "largecircle.fill.circle")
+                .frame(width: 15.0, height: 15.0)
+                .foregroundColor(.orange)
+            Image(systemName: "largecircle.fill.circle")
+                .frame(width: 15.0, height: 15.0)
+                .foregroundColor(.red)
+            Image(systemName: "largecircle.fill.circle")
+                .frame(width: 15.0, height: 15.0)
+                .foregroundColor(.purple)
+            Image(systemName: "largecircle.fill.circle")
             Spacer()
-            HStack {
-                Spacer()
-                Circle()
-                    .frame(width: 30, height: 30)
-                    .foregroundColor(.blue)
-                Circle()
-                    .frame(width: 15.0, height: 15.0)
-                    .foregroundColor(.green)
-                Circle()
-                    .frame(width: 15.0, height: 15.0)
-                    .foregroundColor(.orange)
-                Circle()
-                    .frame(width: 15.0, height: 15.0)
-                    .foregroundColor(.red)
-                Circle()
-                    .frame(width: 15.0, height: 15.0)
-                    .foregroundColor(.purple)
-                Spacer()
-            }.padding(.bottom)
-            
         }
-        .frame(width: 340, height: 220)
-        .background(Color.white)
+        .frame(width:240)
         .cornerRadius(20)
-        .shadow(radius: 20)
     }
 }
