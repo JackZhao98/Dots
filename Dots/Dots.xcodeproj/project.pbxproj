@@ -15,6 +15,8 @@
 		EB497C5B25A6E26F0091CE89 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB497C3025A6E26F0091CE89 /* ContentView.swift */; };
 		EB497C5C25A6E26F0091CE89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB497C3125A6E26F0091CE89 /* Assets.xcassets */; };
 		EB497C5D25A6E26F0091CE89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB497C3125A6E26F0091CE89 /* Assets.xcassets */; };
+		EBE28D7B25A7BFCC00B893C3 /* LinedDots.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE28D7A25A7BFCC00B893C3 /* LinedDots.swift */; };
+		EBE28D7C25A7BFCC00B893C3 /* LinedDots.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE28D7A25A7BFCC00B893C3 /* LinedDots.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,7 @@
 		EB497C5125A6E26F0091CE89 /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB497C5525A6E26F0091CE89 /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		EB497C5725A6E26F0091CE89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EBE28D7A25A7BFCC00B893C3 /* LinedDots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinedDots.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +103,7 @@
 			children = (
 				EB497C2F25A6E26F0091CE89 /* DotsApp.swift */,
 				EB497C3025A6E26F0091CE89 /* ContentView.swift */,
+				EBE28D7A25A7BFCC00B893C3 /* LinedDots.swift */,
 				EB497C3125A6E26F0091CE89 /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -308,6 +312,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBE28D7B25A7BFCC00B893C3 /* LinedDots.swift in Sources */,
 				EB497C5A25A6E26F0091CE89 /* ContentView.swift in Sources */,
 				EB497C5825A6E26F0091CE89 /* DotsApp.swift in Sources */,
 			);
@@ -317,6 +322,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBE28D7C25A7BFCC00B893C3 /* LinedDots.swift in Sources */,
 				EB497C5B25A6E26F0091CE89 /* ContentView.swift in Sources */,
 				EB497C5925A6E26F0091CE89 /* DotsApp.swift in Sources */,
 			);
