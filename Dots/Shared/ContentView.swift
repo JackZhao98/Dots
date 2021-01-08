@@ -67,6 +67,7 @@ struct circlesView: View {
     var body: some View {
         HStack {
             Spacer()
+<<<<<<< HEAD
             Image(systemName: "largecircle.fill.circle")
                 .frame(width: 30, height: 30)
                 .foregroundColor(.blue)
@@ -83,9 +84,38 @@ struct circlesView: View {
                 .frame(width: 15.0, height: 15.0)
                 .foregroundColor(.purple)
             Image(systemName: "largecircle.fill.circle")
+=======
+            HStack {
+                VStack(alignment: .leading) {
+                    titleOfBill()
+                    Text("01-06-2021")
+                        .font(.system(.body, design: .rounded))
+                        .foregroundColor(.gray)
+                }
+                Spacer()
+                Text("$149.99")
+                    .font(.system(.largeTitle, design:.rounded))
+                    .bold()
+            }
+            .padding()
+>>>>>>> 7647b21acf590793121220354ef6131ba79ce7a8
             Spacer()
         }
         .frame(width:240)
         .cornerRadius(20)
+    }
+}
+
+struct titleOfBill: View {
+    var body: some View {
+        HStack {
+            Text("Bill Title")
+                .font(.system(.largeTitle, design: .rounded))
+                .fontWeight(.semibold)
+                .foregroundColor(Color.black)
+                .foregroundColor(.black)
+            Image(systemName: "checkmark.circle.fill")
+                .foregroundColor(.blue)
+        }
     }
 }
