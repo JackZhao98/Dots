@@ -58,15 +58,7 @@ struct ReceiptView: View {
             Spacer()
             HStack {
                 VStack(alignment: .leading) {
-                    HStack {
-                        Text("Bill Title")
-                            .font(.system(.largeTitle, design: .rounded))
-                            .fontWeight(.semibold)
-                            .foregroundColor(Color.black)
-                            .foregroundColor(.black)
-                        Image(systemName: "checkmark.circle.fill")
-                            .foregroundColor(.blue)
-                    }
+                    titleOfBill()
                     Text("01-06-2021")
                         .font(.system(.body, design: .rounded))
                         .foregroundColor(.gray)
@@ -103,5 +95,19 @@ struct ReceiptView: View {
         .background(Color.white)
         .cornerRadius(20)
         .shadow(radius: 20)
+    }
+}
+
+struct titleOfBill: View {
+    var body: some View {
+        HStack {
+            Text("Bill Title")
+                .font(.system(.largeTitle, design: .rounded))
+                .fontWeight(.semibold)
+                .foregroundColor(Color.black)
+                .foregroundColor(.black)
+            Image(systemName: "checkmark.circle.fill")
+                .foregroundColor(.blue)
+        }
     }
 }
