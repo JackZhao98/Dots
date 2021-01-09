@@ -2,3 +2,5 @@
 
 ### Templates
 Repository template has moved to [TEMPLATE.md](./TEMPLATE.md)
+
+This is an addition.
